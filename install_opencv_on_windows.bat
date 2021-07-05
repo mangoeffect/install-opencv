@@ -28,8 +28,10 @@ cd ..
 :: CMake build the opencv solution
 echo "CMake build the opencv solution..."
 echo "Buidding Release..."
-cmake.exe --build build --config Release --target INSTALL
+cmake --build build --config Release
+cmake --install build --config Release
 echo "Buidding Debug..."
-cmake.exe --build build --config Debug --target INSTALL
+cmake --build build --config Debug
+cmake --install build --config Debug
 
 
