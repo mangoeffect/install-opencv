@@ -1,0 +1,23 @@
+name: install-opencv
+on: push
+
+jobs:
+  windows:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install-on-windows
+      run: install_opencv_on_windows.bat
+  linux:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: install_opencv_on_linux.sh
+  macos:
+    runs-on: macos-10.15
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install_opencv_on_macos.sh
