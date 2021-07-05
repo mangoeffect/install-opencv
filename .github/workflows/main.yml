@@ -14,10 +14,12 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    - name: install_opencv_on_linux.sh
+    - name: install_opencv_on_linux
+      run: install_opencv_on_linux.sh
   macos:
     runs-on: macos-10.15
 
     steps:
     - uses: actions/checkout@v2
-    - name: install_opencv_on_macos.sh
+    - name: install_opencv_on_macos
+      run: install_opencv_on_macos.sh
