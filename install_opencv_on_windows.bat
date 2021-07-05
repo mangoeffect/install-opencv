@@ -23,12 +23,13 @@ cd build
 ::CMake generate visual studio solution::
 echo "CMake generate visual studio solution..."
 cmake -G "Visual Studio 16 2019" -DINSTALL_PYTHON_EXAMPLES=ON -DOPENCV_EXTRA_MODULES_PATH=%cwd%\opencv_contrib\modules ..
+cd ..
 
 :: CMake build the opencv solution
 echo "CMake build the opencv solution..."
 echo "Buidding Release..."
-cmake.exe --build . --config Release --target INSTALL
+cmake.exe --build build --config Release --target INSTALL
 echo "Buidding Debug..."
-cmake.exe --build . --config Debug --target INSTALL
+cmake.exe --build build --config Debug --target INSTALL
 
 
