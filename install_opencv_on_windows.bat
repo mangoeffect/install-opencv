@@ -22,7 +22,7 @@ mkdir build
 cd build
 ::CMake generate visual studio solution::
 echo "CMake generate visual studio solution..."
-cmake -G "Visual Studio 16 2019" -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules ..
+cmake -G "Visual Studio 16 2019" -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules ..
 cd ..
 
 :: CMake build the opencv solution
