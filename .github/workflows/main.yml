@@ -18,6 +18,7 @@ jobs:
     - name: install_opencv_on_linux
       shell: bash
       run: | 
+        chmod +x ./install_opencv_on_linux.sh
         sudo ./install_opencv_on_linux.sh
   macos:
     runs-on: macos-10.15
@@ -27,4 +28,5 @@ jobs:
     - name: install_opencv_on_macos
       shell: bash
       run: |
+        chmod +x ./install_opencv_on_macos.sh
         sudo ./install_opencv_on_macos.sh
