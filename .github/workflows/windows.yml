@@ -59,6 +59,7 @@ jobs:
       # 运行cmake生存vs解决方案
       - name: Running cmake
         run: |
+          mkdir build
           cd ${{ github.workspace }}
           cd build
           cmake .. -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
