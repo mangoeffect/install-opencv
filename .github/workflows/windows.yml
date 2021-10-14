@@ -41,7 +41,7 @@ jobs:
       # 安装vcpkg
       - name: Get vcpkg(windows)
         # 平台为windows且未缓存
-        if: ${{ steps.vcpkg-cache.outputs.cache-hit != 'true' }}
+        # if: ${{ steps.vcpkg-cache.outputs.cache-hit != 'true' }}
         run: |
           cd ${{ github.workspace }}
           mkdir build -force
