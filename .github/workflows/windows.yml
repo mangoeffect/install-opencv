@@ -45,7 +45,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           mkdir build -force
-          git clone https://github.com/Microsoft/vcpkg.git
+          git clone https://github.com/Microsoft/vcpkg.git -b 2021.05.12
           cd vcpkg
           .\bootstrap-vcpkg.bat
    
