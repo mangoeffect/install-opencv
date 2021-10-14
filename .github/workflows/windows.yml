@@ -48,12 +48,6 @@ jobs:
           git clone https://github.com/Microsoft/vcpkg.git
           cd vcpkg
           .\bootstrap-vcpkg.bat
-      # 安装OpenCV依赖
-      - name: Install dependencies
-        if: ${{ steps.vcpkg-cache.outputs.cache-hit != 'true' }}
-        run: |
-          cd ${{ github.workspace }}
-          vcpkg install
    
       # 运行cmake生存vs解决方案
       - name: Running cmake
