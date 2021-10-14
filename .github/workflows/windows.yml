@@ -54,7 +54,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           cd build
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_MANIFEST_MODE=ON -DCMAKE_BUILD_TYPE=Release
 
       # 编译解决方案
       - name: Build Solution
