@@ -66,5 +66,14 @@ jobs:
       # 编译解决方案
       - name: Build Solution
         run: |
+          cd ${{ github.workspace }}
           cd build
           cmake --build . --parallel --config Release
+
+      # 运行测试程序
+      - name: Run test 
+        run: | 
+          cd ${{ github.workspace }}
+          cd build
+          ctest
+        
