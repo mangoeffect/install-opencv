@@ -41,20 +41,27 @@ jobs:
       # 安装vcpkg
       - name: Get vcpkg(windows)
         # 平台为windows且未缓存
-        # if: ${{ steps.vcpkg-cache.outputs.cache-hit != 'true' }}
+        if: ${{ steps.vcpkg-cache.outputs.cache-hit != 'true' }}
         run: |
           cd ${{ github.workspace }}
           mkdir build -force
-          git clone https://github.com/Microsoft/vcpkg.git -b 2021.05.12
+          git clone https://github.com/Microsoft/vcpkg.git
           cd vcpkg
           .\bootstrap-vcpkg.bat
+      
+      # 安装opencv
+      - name: install opencv
+        if: ${{ steps.vcpkg-cache.outputs.cache-hit != 'true' }}
+        run: |
+          cd ${{ github.workspace }}
+          vcpkg install opencv:x64-windows
    
       # 运行cmake生存vs解决方案
       - name: Running cmake
         run: |
           cd ${{ github.workspace }}
           cd build
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_MANIFEST_MODE=ON -DCMAKE_BUILD_TYPE=Release
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
 
       # 编译解决方案
       - name: Build Solution
